@@ -27,6 +27,7 @@ function markdownpdf (opts) {
   opts.preProcessHtml = opts.preProcessHtml || function () { return through() }
   opts.remarkable = opts.remarkable || {}
   opts.remarkable.plugins = opts.remarkable.plugins || []
+  opts.outputExtension = opts.outputExtension || "pdf"
 
   var md = ""
 
@@ -78,7 +79,7 @@ function markdownpdf (opts) {
     fs.close(tmpHtmlFd)
 
     // Create tmp file to save PDF to
-    tmp.file({postfix: ".pdf"}, function (er, tmpPdfPath, tmpPdfFd) {
+    tmp.file({postfix: "." + opts.outputExtension}, function (er, tmpPdfPath, tmpPdfFd) {
       if (er) return outputStream.emit("error", er)
       fs.close(tmpPdfFd)
 
