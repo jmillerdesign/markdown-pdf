@@ -59,7 +59,7 @@ function markdownpdf (opts) {
       {
         if (plugin && typeof(plugin) == 'function') {
           mdParser.use(plugin)
-        } 
+        }
       })
 
       self.push(mdParser.render(md))

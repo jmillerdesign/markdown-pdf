@@ -72,6 +72,6 @@ function paperSize (runningsPath, obj) {
         obj[which].height = runnings[which].height
     }
   }
-  
+
   return obj
 }

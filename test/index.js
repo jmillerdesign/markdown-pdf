@@ -1,6 +1,6 @@
 var fs = require("fs")
   , test = require("tape")
-  , markdownpdf = require("../")  
+  , markdownpdf = require("../")
   , tmp = require("tmp")
   , through = require("through2")
   , pdfText = require("pdf-text")
@@ -157,7 +157,7 @@ test("should initialize remarkable plugins", function(t) {
   var remarkableOpts = {
     plugins : [
       // should skip non-functions
-      undefined, 
+      undefined,
       "test",
       function(md, opts) {
         pluginInit = true;
